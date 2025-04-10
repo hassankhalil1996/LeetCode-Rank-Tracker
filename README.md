@@ -27,8 +27,8 @@ This project automatically scrapes and logs your **LeetCode global ranking** dai
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/yourusername/leetcode-rank-tracker.git
-cd leetcode-rank-tracker
+git clone https://github.com/yourusername/leetcode-rank-Tracker.git
+cd leetcode-rank-Tracker
 ```
 
 ### 2. Install requirements
@@ -58,15 +58,17 @@ python VisualizeChart.py
 
     - Make sure Python is in your PATH
 
-    - You can customize the username in fetch_rank.py
+    - You must customize the username in fetch_rank.py
+
+    - You need to be logged in to your LeetCode profile
 ---
 
----
+
 # ✨ Demo
 - (Insert a chart screenshot or GIF if you want)
 ---
 
----
+
 # 📜 License
 - MIT License
 ---
