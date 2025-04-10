@@ -1,0 +1,72 @@
+# 🧠 LeetCode Rank Tracker
+
+This project automatically scrapes and logs your **LeetCode global ranking** daily using Python and Task Scheduler (Windows only), then visualizes the ranking trend over time.
+
+---
+
+## 🚀 Features
+
+- ✅ Automatically scrapes your LeetCode rank once a day
+- ✅ Logs rank into a CSV file with timestamps
+- ✅ Visualizes your progress using a clean line chart
+
+---
+
+## 📁 Project Structure
+
+| File | Description |
+|------|-------------|
+| `fetch_rank.py` | Uses Selenium to scrape your LeetCode rank and log it to `rank_history.csv` |
+| `automated_task_sched.py` | Registers a Windows Task Scheduler job to run `fetch_rank.py` daily |
+| `VisualizeChart.py` | Plots your LeetCode rank history using Matplotlib |
+
+---
+
+## 🛠 Setup Instructions
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/yourusername/leetcode-rank-tracker.git
+cd leetcode-rank-tracker
+```
+
+### 2. Install requirements
+```bash
+pip install -r requirements.txt
+```
+### 3. Download ChromeDriver and update the path in fetch_rank.py:
+```bash
+path = r'C:\path\to\chromedriver.exe'
+```
+
+### 4. Run the scheduler script (Windows only)
+```bash
+python automated_task_sched.py
+```
+#### This will create a scheduled task that runs fetch_rank.py once every day.
+
+
+### 5. Visualize your progress anytime
+```bash
+python VisualizeChart.py
+```
+
+---
+# 📌 Notes
+    - Windows only (uses COM automation via win32com)
+
+    - Make sure Python is in your PATH
+
+    - You can customize the username in fetch_rank.py
+---
+
+---
+# ✨ Demo
+- (Insert a chart screenshot or GIF if you want)
+---
+
+---
+# 📜 License
+- MIT License
+---
