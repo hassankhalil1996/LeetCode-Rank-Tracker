@@ -27,8 +27,8 @@ This project automatically scrapes and logs your **LeetCode global ranking** dai
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/yourusername/leetcode-rank-Tracker.git
-cd leetcode-rank-Tracker
+git clone https://github.com/yourusername/LeetCode-Rank-Tracker.git
+cd LeetCode-Rank-Tracker
 ```
 
 ### 2. Install requirements
