@@ -11,8 +11,12 @@ import csv
 website = 'https://leetcode.com/u/hassan21kh1996/'
 path = r'C:\chromedriver-win64\chromedriver.exe'  # <-- use raw string or double backslashes
 
+options = webdriver.ChromeOptions()
+options.add_argument("--window-position=-2400,-2400") 
+
 service = Service(executable_path=path)
-driver = webdriver.Chrome(service=service)
+# driver = webdriver.Chrome(service=service)
+driver = webdriver.Chrome(service=service, options= options) 
 
 driver.get(website)
 

@@ -43,9 +43,8 @@ path = r'C:\path\to\chromedriver.exe'
 ### 4. Run the scheduler script (Windows only)
 ```bash
 python automated_task_sched.py
-```
 #### This will create a scheduled task that runs fetch_rank.py once every day.
-
+```
 
 ### 5. Visualize your progress anytime
 ```bash
