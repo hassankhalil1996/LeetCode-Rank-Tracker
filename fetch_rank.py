@@ -1,3 +1,4 @@
+import chromedriver_autoinstaller
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -7,16 +8,22 @@ import os
 from datetime import datetime
 import csv
 
+# Automatically install ChromeDriver if needed
+chromedriver_autoinstaller.install()
 
-website = 'https://leetcode.com/u/hassan21kh1996/'
-path = r'C:\chromedriver-win64\chromedriver.exe'  # <-- use raw string or double backslashes
+# Use the default ChromeDriver path from chromedriver_autoinstaller
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+
+website = 'https://leetcode.com/u/username/'
 
 options = webdriver.ChromeOptions()
-options.add_argument("--window-position=-2400,-2400") 
+options.add_argument("--window-position=-2400,-2400")
 
-service = Service(executable_path=path)
-# driver = webdriver.Chrome(service=service)
-driver = webdriver.Chrome(service=service, options= options) 
+# chromedriver_autoinstaller will handle  the path.
+service = Service()
+
+driver = webdriver.Chrome(service=service, options=options)
 
 driver.get(website)
 
@@ -25,11 +32,13 @@ rank = WebDriverWait(driver, 10).until(
     EC.visibility_of_element_located((By.XPATH, "//*[contains(@class, 'ttext-label-1') and contains(@class, 'font-medium')]"))
 )
 
-print(rank.text.strip())
+# with open("log.txt", "a") as log:
+#     log.write(f"{datetime.now()} , RANK = {rank.text.strip()}: Ran successfully\n")
 
 # Save to CSV
 filename = "rank_history.csv"
 today = datetime.now().strftime('%d-%m-%Y')
+today_general = datetime.now()   # to test exactly time ...
 
 # Append to CSV file
 file_exists = os.path.exists(filename)
@@ -38,8 +47,6 @@ with open(filename, 'a', newline='') as f:
     if not file_exists:
         writer.writerow(["Date", "Rank"])
     writer.writerow([today, rank.text])
-
-
-# input("Press Enter to close...")  # ttext-label-1 dark:text-dark-label-1 font-medium
+    writer.writerow([today_general, rank.text]) # to test exactly time ...
 
 driver.quit()

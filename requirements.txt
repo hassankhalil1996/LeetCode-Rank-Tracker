@@ -5,3 +5,4 @@ selenium
 matplotlib
 pandas
 pywin32
+chromedriver-autoinstaller

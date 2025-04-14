@@ -5,12 +5,12 @@ echo Setting up LeetCode Rank Tracker...
 echo Installing Python dependencies...
 pip install -r requirements.txt
 
-:: Prompt user to enter the ChromeDriver path if it's not set
-set /p chromedriver_path="Enter the full path to chromedriver.exe (e.g. C:\path\to\chromedriver.exe): "
+:: Prompt user to enter the LeetCode username
+set /p leetcode_username="Enter your LeetCode username: "
 
-:: Update the fetch_rank.py script with the provided path
-echo Updating fetch_rank.py with chromedriver path...
-powershell -Command "(Get-Content fetch_rank.py) -replace 'path = r\"C:\\chromedriver-win64\\chromedriver.exe\"', 'path = r\"%chromedriver_path%\"' | Set-Content fetch_rank.py"
+:: Update fetch_rank.py script with the provided username
+echo Updating fetch_rank.py with LeetCode username...
+python update_website_url.py %leetcode_username%
 
 :: Run automated task scheduler script to register task
 echo Setting up Task Scheduler...
