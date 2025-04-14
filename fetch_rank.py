@@ -47,6 +47,6 @@ with open(filename, 'a', newline='') as f:
     if not file_exists:
         writer.writerow(["Date", "Rank"])
     writer.writerow([today, rank.text])
-    writer.writerow([today_general, rank.text]) # to test exactly time ...
+    # writer.writerow([today_general, rank.text]) # to test exactly time ...
 
 driver.quit()
