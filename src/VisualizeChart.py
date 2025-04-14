@@ -1,8 +1,13 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import os
 
 # Load the data from CSV
-data = pd.read_csv("rank_history.csv")
+#  for portability
+
+base_dir = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(base_dir, "../data/rank_history.csv")
+data = pd.read_csv(csv_path)
 
 # Convert the 'Date' column to datetime with the correct format
 data['Date'] = pd.to_datetime(data['Date'], format='%d-%m-%Y')

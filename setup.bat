@@ -10,11 +10,11 @@ set /p leetcode_username="Enter your LeetCode username: "
 
 :: Update fetch_rank.py script with the provided username
 echo Updating fetch_rank.py with LeetCode username...
-python update_website_url.py %leetcode_username%
+python src/update_website_url.py %leetcode_username%
 
 :: Run automated task scheduler script to register task
 echo Setting up Task Scheduler...
-python automated_task_sched.py
+python src/automated_task_sched.py
 
 echo Setup complete!
 pause

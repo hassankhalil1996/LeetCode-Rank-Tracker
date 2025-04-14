@@ -27,8 +27,15 @@ trigger.StartBoundary = start_time.isoformat()
 TASK_ACTION_EXEC = 0
 action = task_def.Actions.Create(TASK_ACTION_EXEC)
 action.ID = 'Run Python Script'
+
+# Automate the working directory extraction based on the script location
+current_directory = os.path.dirname(os.path.realpath(__file__))
+script_path = os.path.join(current_directory, 'fetch_rank.py')
+
+print("script_path" , script_path)
+
 action.Path = python_path
-action.Arguments ='fetch_rank.py'
+action.Arguments = f'"{script_path}"'  # Full path to fetch_rank.py
 
 # Automate working directory extraction based on the script location
 current_directory = os.path.dirname(os.path.realpath(__file__))

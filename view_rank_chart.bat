@@ -1,4 +1,4 @@
 @echo off
 echo Opening LeetCode Rank Chart...
-python VisualizeChart.py
+python src\VisualizeChart.py
 pause

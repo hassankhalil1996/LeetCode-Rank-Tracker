@@ -36,7 +36,10 @@ rank = WebDriverWait(driver, 10).until(
 #     log.write(f"{datetime.now()} , RANK = {rank.text.strip()}: Ran successfully\n")
 
 # Save to CSV
-filename = "rank_history.csv"
+# filename = "rank_history.csv"
+filename = os.path.join(os.path.dirname(__file__), '..', 'data', 'rank_history.csv')
+filename = os.path.abspath(filename)
+
 today = datetime.now().strftime('%d-%m-%Y')
 # today_general = datetime.now()   # to test exactly time ...
 
