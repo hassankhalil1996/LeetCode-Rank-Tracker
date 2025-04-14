@@ -31,25 +31,10 @@ git clone https://github.com/yourusername/LeetCode-Rank-Tracker.git
 cd LeetCode-Rank-Tracker
 ```
 
-### 2. Install requirements
-```bash
-pip install -r requirements.txt
-```
-### 3. Download ChromeDriver and update the path in fetch_rank.py:
-```bash
-path = r'C:\path\to\chromedriver.exe'
-```
+### 2. Run setup.bat
 
-### 4. Run the scheduler script (Windows only)
-```bash
-python automated_task_sched.py
-#### This will create a scheduled task that runs fetch_rank.py once every day.
-```
+### 3. Run view_rank_chart.bat to show your rank 
 
-### 5. Visualize your progress anytime
-```bash
-python VisualizeChart.py
-```
 
 ---
 # 📌 Notes
