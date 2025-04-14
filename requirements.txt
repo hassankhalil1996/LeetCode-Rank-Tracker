@@ -1,6 +1,3 @@
-### 📦 `requirements.txt` (for convenience)
-
-```txt
 selenium
 matplotlib
 pandas
